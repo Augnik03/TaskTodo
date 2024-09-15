@@ -8,15 +8,22 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "./componen
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
 import { CalendarIcon, Grid3X3Icon, ListIcon, PlusCircle, Search, Filter } from 'lucide-react';
 
+interface PopoverProps{
+  trigger: React.ReactNode;
+  content: React.ReactNode;
+}
+
+
+
 // Popover component
-const Popover = ({ trigger, content }) => {
+const Popover:React.FC<PopoverProps> = ({ trigger, content }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const popoverRef = useRef(null);
+  const popoverRef = useRef<HTMLDivElement | null>(null);
 
   // Close the popover when clicking outside of it
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (popoverRef.current && !popoverRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (popoverRef.current && !popoverRef.current.contains(event.target as Node)) {
         setIsOpen(false);
       }
     };
@@ -44,8 +51,16 @@ const Popover = ({ trigger, content }) => {
   );
 };
 
+interface CheckboxProps{
+  id: string;
+  checked: boolean;
+  onCheckedChange: (checked: boolean) => void;
+  label: string;
+}
+
+
 // Checkbox component
-const Checkbox = ({ id, checked, onCheckedChange, label }) => {
+const Checkbox:React.FC<CheckboxProps> = ({ id, checked, onCheckedChange, label }) => {
   return (
     <div className="flex items-center">
       <input
