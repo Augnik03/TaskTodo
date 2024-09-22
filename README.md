@@ -1,46 +1,94 @@
-# Getting Started with Create React App
+# Task Management App - README
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This is a React-based task management application that allows users to create, filter, search, and manage tasks. The app supports adding new tasks with attributes like title, description, due date, priority, and status. It also provides features to edit, delete, filter, and search tasks using an intuitive interface with support for both list and grid views.
 
-In the project directory, you can run:
+### Features:
+- Add, edit, and delete tasks
+- Search tasks by title or description
+- Filter tasks by priority and status
+- List and grid view options
+- Tasks are saved to `localStorage` for persistence
+- Responsive and user-friendly interface
 
-### `npm start`
+## Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Before running this app, ensure you have the following installed:
+- [Node.js](https://nodejs.org/) (version 14 or later)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) (for managing dependencies)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Installation
 
-### `npm test`
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Augnik03/TaskTodo.git
+   cd TaskTodo
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-### `npm run build`
+3. **Run the application:**
+   ```bash
+   npm start
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   The application will start and be available at `http://localhost:3000/`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Components
 
-### `npm run eject`
+- **App.tsx:** The main component that handles task creation, search, filters, and views.
+- **TaskItem.tsx:** Displays individual tasks with options to edit or delete.
+- **TaskCard.tsx:** Displays tasks in a card format for grid view.
+- **Popover.tsx:** A popover component used for showing filters.
+- **Checkbox.tsx:** A reusable checkbox component for filter options.
+- **Card, Input, Button, etc.:** Custom UI components for consistent styling.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Usage
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Creating Tasks:**
+   - Enter a title, due date, description, select priority, and status, and then click the "Add Task" button.
+   - The task will be added to the task list and displayed in either list or grid view, depending on the selected mode.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+2. **Editing Tasks:**
+   - Click the edit icon on a task to modify its details.
+   - After making changes, save the task by clicking the "Save" button.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+3. **Deleting Tasks:**
+   - Click the delete icon on any task to remove it from the list.
 
-## Learn More
+4. **Searching Tasks:**
+   - Use the search bar at the top to filter tasks by title or description.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5. **Filtering Tasks:**
+   - Click the "Filters" button to filter tasks by priority and status.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+6. **View Modes:**
+   - Toggle between list and grid views using the options above the task list.
+
+## Styling
+
+- **TailwindCSS:** The app uses TailwindCSS for responsive design and utility classes.
+- **Lucide Icons:** Icons for actions like search, filter, calendar, etc., are provided by Lucide-React.
+
+## Data Persistence
+
+The app uses `localStorage` to persist tasks. This means tasks will remain available even after refreshing or closing the browser. When a task is added, edited, or deleted, the changes are automatically saved to `localStorage`.
+
+## Customization
+
+You can extend or modify the task structure by updating the `Task` interface in `App.tsx`. Add more fields like "Tags," "Assignees," or other properties depending on your project requirements.
+
+## Contributions
+
+Feel free to fork the repository and submit pull requests. Any contributions to improve the app are welcome!
+
+
+
+---
+
+Enjoy managing your tasks efficiently with **Tasky**!
